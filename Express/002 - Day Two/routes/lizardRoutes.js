@@ -32,9 +32,6 @@ router.get("/getOne/:name", (req, res) => {
         if (err) return res.status(400).send(err);
         return res.status(200).send(lizard);
     });
-
-    
-
 })
 
 module.exports = router;
