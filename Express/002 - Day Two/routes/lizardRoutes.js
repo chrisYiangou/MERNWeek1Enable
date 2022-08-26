@@ -23,7 +23,17 @@ router.post("/create", (req, res) => {
     }).catch((err) => {
         console.log(err)
     })
+})
 
+router.get("/getOne/:name", (req, res) => {
+    //Reference the Schema -> 
+    //Find One by name 
+    const myLizard = Lizard.findOne({"lizardName" : req.params.name}, (err, lizard) => {
+        if (err) return res.status(400).send(err);
+        return res.status(200).send(lizard);
+    });
+
+    
 
 })
 
